@@ -1441,19 +1441,6 @@ function InitUi(){
 
     UpdateUI();
 
-    // Show Welcome Screen
-    if(welcomeScreen){
-        if(localDB.getItem("WelcomeScreenAccept") != "yes"){
-            OpenWindow(welcomeScreen, lang.welcome, 480, 600, true, false, lang.accept, function(){
-                localDB.setItem("WelcomeScreenAccept", "yes");
-                CloseWindow();
-                ShowMyProfile();
-            }, null, null, null, null);
-
-            return;
-        }
-    }
-
     // Check if you account is created
     if(profileUserID == null ){
         ShowMyProfile();
